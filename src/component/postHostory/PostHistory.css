@@ -1,0 +1,40 @@
+/* .PostHistory{
+    align-items: center;
+    text-align: center;
+   
+} */
+
+.post-history {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-history h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #343a40;
+  }
+  
+  .post-item {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .post-item:last-child {
+    border-bottom: none;
+  }
+  
+  .post-date {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #868e96;
+  }
+  
+  

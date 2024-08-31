@@ -1,0 +1,73 @@
+.notification-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .notification-icon {
+    font-size: 28px;
+  }
+  
+  .notification-bar {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .notification-bar:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .notification-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .notification-content {
+    flex: 1;
+  }
+  
+  .notification-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .notification-message {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .notification-button {
+    padding: 8px 16px;
+    background-color: #0078d0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .notification-button:hover {
+    background-color: #005fa3;
+  }
+  

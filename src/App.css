@@ -1,3 +1,49 @@
-*{
-    align-items: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+:root {
+    --theme-dark-bg-color: #4a5859;
+    --theme-light-bg-color: #cbd9e6;
+    --theme-dark-font-color: #ffffff;
+    --theme-light-font-color: rgb(0, 0, 0);
+    --theme-color-blue: #567cbd;
+    --theme-color-hover: #075bbc;
+    --theme-darkcolor-header: #7c8959;
+    --theme-lightcolor-header: #453bda;
+    --theme-font-family: "Poppins", sans-serif;
+    --theme-font-weight: 400;
+    --theme-font-style: normal;
+}
+
+body {
+
+    font-family: var(--theme-font-family);
+    font-weight: var(--theme-font-weight);
+    font-style: var(--theme-font-style);
+
+}
+
+
+
+.light {
+
+    background-color: var(--theme-light-bg-color);
+
+    color: var(--theme-light-font-color);
+
+
+}
+
+.dark {
+    background-color: var(--theme-dark-bg-color);
+    color: var(--theme-dark-font-color);
+
+
+
 }
