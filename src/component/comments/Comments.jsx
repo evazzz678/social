@@ -2,14 +2,19 @@ import React, { useState } from 'react'
 import "./Comments.css"
 
 
-function Comments() {
+function Comments({postId}) {
 
     const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
 
   const handleAddComment = () => {
+
     if (newComment.trim() !== '') {
-      setComments([...comments, newComment]);
+      setComments((prevComments) => ({
+        ...prevComments,
+        [postId]: [...(prevComments[postId] || []), newComment]
+      }));
+
       setNewComment('');
     }
   };
@@ -22,7 +27,7 @@ function Comments() {
       <h3>Comments</h3>
       
       <div className="comments-list">
-        {comments.map((comment, index) => (
+        {(comments[postId] || []).map((comment, index) => (
           <div key={index} className="comment-item">
             <p>{comment}</p>
           </div>

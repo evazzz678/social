@@ -1,7 +1,7 @@
 .sidebar {
 
   width: 250px;
-  background-color: var(--theme-color-blue);
+  background-color: var(--theme-color-sidebar);
   color: #fff;
   height: 100vh;
   padding-top: 20px;
@@ -42,9 +42,10 @@
   /* justify-content: space-around; */
 
 }
-.Link{
+/* .Link{
   text-decoration: none;
-}
+  color: black;
+} */
 
 .sidebar-button>div {
   /* border: 1px solid; */

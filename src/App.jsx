@@ -18,6 +18,7 @@ import Followings from './component/followings/Followings';
 import Chat from './component/chat/Chat';
 import LogOut from './component/logOut/LogOut';
 import Comments from './component/comments/Comments';
+import Sidebar from './component/sidebar/Sidebar';
 
 
 
@@ -36,28 +37,35 @@ function App() {
 
           <Header />
 
-          <Routes>
 
-            <Route path="/" element={<Authen />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/notification" element={<Notification />} />
-            <Route path="/viewprofile" element={<ViewProfile />} />
-            <Route path="/findfriends" element={<FindFriends />} />
-            <Route path="/postHisory" element={<PostHistory />} />
-            <Route path="/profile" element={<ViewProfile />} />
-            <Route path="/ourStory" element={<OurStory />} />
-            <Route path="/addpost" element={<AddPost />} />
-            <Route path="/followers" element={<Followers />} />
-            <Route path="/addPhoto" element={<AddPhotos />} />
-            <Route path="/followings" element={<Followings />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/logOut" element={<LogOut/>} />
-            <Route path="/comments" element={<Comments/>} />
+          <div className='section-1'>
+            <div className='section-11'>
+              <Sidebar />
+            </div>
+            <div className='section-12'>
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/notification" element={<Notification />} />
+                <Route path="/viewprofile" element={<ViewProfile />} />
+                <Route path="/findfriends" element={<FindFriends />} />
+                <Route path="/postHisory" element={<PostHistory />} />
+                <Route path="/profile" element={<ViewProfile />} />
+                <Route path="/ourStory" element={<OurStory />} />
+                <Route path="/addpost" element={<AddPost />} />
+                <Route path="/followers" element={<Followers />} />
+                <Route path="/addPhoto" element={<AddPhotos />} />
+                <Route path="/followings" element={<Followings />} />
+                <Route path="/chat" element={<Chat />} />
+                <Route path="/logOut" element={<LogOut />} />
+                <Route path="/comments" element={<Comments />} />
+                <Route path="/" element={<Authen />} />
+                <Route path="/signup" element={<SignUp />} />
+              </Routes>
+            </div>
+          </div>
 
 
 
-          </Routes>
         </BrowserRouter>
       </div>
 

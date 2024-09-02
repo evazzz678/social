@@ -11,10 +11,10 @@ import axios from 'axios';
 function Authen() {
 
 
-	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
-	const [state,setState] = useState('')
+	const [state, setState] = useState('')
 
 
 
@@ -23,19 +23,25 @@ function Authen() {
 	let navigate = useNavigate()
 	const handleLogin = () => {
 
-
-		axios.post('http://localhost:3000/user/login', {}).then((result) => {
-
-			console.log(result);
-			
-            setState({ message: result.data.message })
-
-            console.log(result.data.token);
-
-            localStorage.setItem('token', result.data.token)
+		console.log({ email, password });
 
 
-			navigate('/home')
+
+		axios.post('http://localhost:3000/user/login', { email, password }).then((result) => {
+
+
+
+
+
+			console.log('token', result.data.token);
+
+
+			if (result.data.loginStatus) {
+				localStorage.setItem('token', result.data.token)
+				navigate('/home')
+			}
+
+			setState(result.data.message)
 
 		}).catch(() => {
 			console.log(error);
@@ -55,12 +61,13 @@ function Authen() {
 			<div className="form-container">
 				<img src={logo} alt="Logo" className='image' />
 				<p className="title">Login</p>
+				<p className='status'>{state}</p>
 				<form className="form">
 					<div className="input-group">
-						<label htmlFor="username">Username</label>
+						<label htmlFor="email">Email</label>
 
-						<input type="text" name="username" id="username" placeholder="username" value={username}
-							onChange={(e) => setUsername(e.target.value)} />
+						<input type="text" name="email" id="email" placeholder="email" value={email}
+							onChange={(e) => setEmail(e.target.value)} />
 					</div>
 					<div className="input-group">
 						<label htmlFor="password">Password</label>
@@ -69,7 +76,7 @@ function Authen() {
 
 					</div><br />
 					<button type='button' className="sign" onClick={handleLogin}
-						disabled={!username || !password}>Log in </button>
+						disabled={!email || !password}>Log in </button>
 				</form>
 
 

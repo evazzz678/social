@@ -9,13 +9,16 @@
 
 :root {
     --theme-dark-bg-color: #4a5859;
-    --theme-light-bg-color: #cbd9e6;
+    --theme-light-bg-color: #9eb2b1;
     --theme-dark-font-color: #ffffff;
     --theme-light-font-color: rgb(0, 0, 0);
-    --theme-color-blue: #567cbd;
-    --theme-color-hover: #075bbc;
-    --theme-darkcolor-header: #7c8959;
-    --theme-lightcolor-header: #453bda;
+    --theme-color-sidebar: #eab192;
+    --theme-color-darksidebar: #6c6a6a;
+
+    --theme-color-hover: #c1705a;
+    --theme-darkcolor-header: #333740;
+    --theme-lightcolor-header: #c1705a;
+    ;
     --theme-font-family: "Poppins", sans-serif;
     --theme-font-weight: 400;
     --theme-font-style: normal;
@@ -46,4 +49,20 @@ body {
 
 
 
+}
+
+.section-1 {
+    display: flex;
+}
+
+.section-11 {
+    flex: 1;
+    align-self: flex-start;
+}
+
+.section-12 {
+    flex: 5;
+
+    /* display: flex;
+    justify-content: center; */
 }

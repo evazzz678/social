@@ -1,10 +1,7 @@
 import React from 'react'
 import './ViewProfile.css'
-
- import Header from '../header/Header'
 import Sidebar from '../sidebar/Sidebar'
-import Feed from '../feeds/Feeds'
- import pic1 from "./../../assets/pic1.jpg"
+import pic1 from "./../../assets/pic1.jpg"
 import pic2 from "./../../assets/pic2.jpg"
 import AddPost from "../addPost/AddPost"
 import ViewPost from '../view-post/ViewPost'
@@ -14,18 +11,10 @@ function ViewProfile() {
   return (
     <div className='view-profile-page' >
 
-
-      <div>
-        <Sidebar />
-
-      </div>
-      <div>
+      <div className='view-prfile-box-2'>
         <AddPost />
-      
 
 
-
- 
 
 
         <div className='profile'>
@@ -45,13 +34,13 @@ function ViewProfile() {
             </div >
 
             <div className="profileRightbottom">
-              
-              <ViewPost/>
-            </div> 
+
+              <ViewPost />
+            </div>
           </div>
 
 
-        </div> 
+        </div>
 
 
       </div>

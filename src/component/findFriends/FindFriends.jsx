@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FindFriends.css';
 
 const friends = [
@@ -33,6 +33,22 @@ const friends = [
 ];
 
 function FindFriends() {
+  
+//   let [data ,setData] = useState([])
+
+//   useEffect(() => {
+//     axios.get("http://localhost:3000/user/getalluser")
+//     .then((result) => {
+//         console.log(result);
+//         setData(result.data)
+//     }).catch((error) => {
+//         console.log(error);
+//     })
+// }, [])
+
+
+
+
   return (
     <div className="find-friends">
       <h3 className="title">Friends Suggestion</h3>

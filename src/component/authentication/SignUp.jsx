@@ -3,7 +3,7 @@ import "./Login.css"
 import "./SignUp.css"
 import { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function SignUp() {
 
@@ -12,6 +12,7 @@ function SignUp() {
 	})
 
 	let [value, setValue] = useState({
+		username: "",
 		email: "",
 		password: "",
 	})
@@ -25,46 +26,52 @@ function SignUp() {
 			})
 	}
 
-	function sentvalue() {
-		axios.post("http://localhost:3000/user", value).then((result) => {
+
+	let navigate = useNavigate()
+	function sentValue() {
+
+		console.log(value);
+
+		axios.post("http://localhost:3000/user", value)
+		.then((result) => {
 			console.log(result);
 			setState({ message: result.data.message })
 
-			console.log(result.data.token);
-
-			localStorage.setItem('token', result.data.token)
+			navigate('/')
 
 		}).catch(() => {
+			setState({ message:" an error occured" })
 			console.log(error);
 		})
 	}
 
-	function emailExist(email) {async (email) => {
-		try {
-			await axios.get('/api/check-email', { params: { email } });
-		return response.data.exists;
-	  } catch (error) {
-		console.error('Error checking email existence:', error);
-		throw new Error('Failed to check email');
-	  }
+	function emailExist(email) {
+		async (email) => {
+			try {
+				await axios.get('/api/check-email', { params: { email } });
+				return response.data.exists;
+			} catch (error) {
+				console.error('Error checking email existence:', error);
+				throw new Error('Failed to check email');
+			}
+		}
 	}
-}
 
 
-//    function sentOtp(){
+	//    function sentOtp(){
 
-// 	axios.post("http://localhost:3000/user/sendotp", value).then((result) => {
-// 		console.log(result);
-// 		setState({ message: result.data.message })
+	// 	axios.post("http://localhost:3000/user/sendotp", value).then((result) => {
+	// 		console.log(result);
+	// 		setState({ message: result.data.message })
 
-// 		console.log(result.data.token);
+	// 		console.log(result.data.token);
 
-// 		localStorage.setItem('token', result.data.token)
+	// 		localStorage.setItem('token', result.data.token)
 
-// 	}).catch(() => {
-// 		console.log(error);
-// 	})
-//    }
+	// 	}).catch(() => {
+	// 		console.log(error);
+	// 	})
+	//    }
 
 
 
@@ -75,6 +82,8 @@ function SignUp() {
 			<div className="form-container">
 				<p className="title">Sign Up</p>
 				<form className="form">
+
+					<p>{state.message}</p>
 					<div className="input-group">
 						<label for="username">Username</label>
 						<input type="text" name="username" id="username" placeholder="" onChange={getvalue} />
@@ -83,7 +92,7 @@ function SignUp() {
 						<label for="email">Email id</label>
 						<input type="email" name="email" id="email" placeholder="" onChange={getvalue} />
 					</div>
-					
+
 
 
 					{/* <button type='button' onClick={sentOtp}>verify</button><br />
@@ -103,7 +112,7 @@ function SignUp() {
 						<input type="password" name="password" id="password" placeholder="" onChange={getvalue} />
 					</div>
 					<br />
-					<button className="sign"><Link to="/" onClick={sentvalue}> Sign up</Link></button>
+					<button type='button' className="sign" onClick={sentValue}>Sign up</button>
 				</form>
 
 

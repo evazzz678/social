@@ -10,15 +10,23 @@ const Posts = ({ pic1, pic2, userName, date, text, likeCount, commentCount }) =>
 
     const [likeCounts, setLikeCounts] = useState(0);
   const [loveCount, setLoveCount] = useState(0);
+  const [hasLiked, setHasLiked] = useState(false);
+  const [hasLoved, setHasLoved] = useState(false);
+
 
   const handleLike = () => {
-    setLikeCounts(likeCounts + 1);
+    if (!hasLiked) {
+      setLikeCounts(likeCounts + 1);
+      setHasLiked(true);
+    }
   };
 
   const handleLove = () => {
-    setLoveCount(loveCount + 1);
+    if (!hasLoved) {
+      setLoveCount(loveCount + 1);
+      setHasLoved(true);
+    }
   };
-
 
 
     return (

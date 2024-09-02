@@ -26,6 +26,7 @@ const posts = [
 
 function PostHistory() {
   return (
+   
     <div className="post-history">
       <h2>Your Posts</h2>
       {posts.length > 0 ? (
@@ -39,6 +40,7 @@ function PostHistory() {
         <p>No posts yet.</p>
       )}
     </div>
+ 
   );
 }
 

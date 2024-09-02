@@ -23,12 +23,10 @@ function Home() {
 
 
       <div className='content-page'>
-        <div className='content-page-1'>
-          <Sidebar />
-        </div>
+
 
         <div className='content-page-2'>
-           {/* <Feeds /> */}
+          {/* <Feeds /> */}
           {/* /*<Feeds />
           <Feeds /> */}
 

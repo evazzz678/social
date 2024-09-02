@@ -15,8 +15,12 @@
   
   }
 
+  .status{
+    color: red;
+  }
+
   .forms{
-    background-color: #a7bcff;
+    background-color: ;
     height: 100vh;
     display: flex;
     align-items: center;
